@@ -62,7 +62,7 @@ Published on PyPI, currently at **v0.10.0**.
 
 Uncertainty-guided machine-learning screening of **278,778 ARC-MOF structures** for pre-combustion CO₂/H₂ separation at 298 K and 40 bar. Predicts CO₂ uptake, working capacity, CO₂/H₂ selectivity, and heat of adsorption using XGBoost as the primary model, with Random Forest, MLP, CGCNN, and a LightGBM-based stacking ensemble as comparisons. Uncertainty is quantified with split conformal prediction, interpreted with SHAP, and combined with Pareto ranking, topology-level design-rule extraction, and synthesizability scoring. The analysis identifies packing efficiency, more than pore diameter, as the primary control on CO₂/H₂ selectivity. Includes a [Zenodo reproducibility archive](https://doi.org/10.5281/zenodo.20305724).
 
-Manuscript in preparation for *Digital Discovery* (Royal Society of Chemistry).
+Accepted in *Digital Discovery* (Royal Society of Chemistry).
 
 `Python` `XGBoost` `LightGBM` `CGCNN` `Conformal Prediction` `SHAP`
 
