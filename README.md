@@ -1,165 +1,92 @@
+<!-- GitHub profile README | Single-file design: no local image assets required. -->
 <div align="center">
-
-# Hi, I'm Md. Rifat Khandaker
-
-### Computational Materials Researcher | Chemical Engineer | AI-for-Science Builder
-
-I develop reliable and reproducible computational workflows for materials discovery using density functional theory, atomistic simulation, scientific machine learning, active learning, and uncertainty quantification.
-
-My current work focuses on energy materials, reaction pathways, ionic diffusion, porous materials, 2D systems, and open-source scientific software.
-
-**Research interests:** DFT • Atomistic Simulation • Quantum ESPRESSO • ASE • NEB/CI-NEB • Active Learning • Uncertainty Quantification • MLIPs • Energy Materials • MOFs • 2D Materials
-
-![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)
-![DFT](https://img.shields.io/badge/method-DFT-9cf)
-![ASE](https://img.shields.io/badge/simulation-ASE-orange)
-![Quantum ESPRESSO](https://img.shields.io/badge/DFT%20engine-Quantum%20ESPRESSO-blueviolet)
-![Linux](https://img.shields.io/badge/OS-Linux%20%2F%20WSL-lightgrey)
-
+<img width="100%" alt="Md. Rifat Khandaker — Computational Materials Scientist" src="https://capsule-render.vercel.app/api?type=waving&amp;height=235&amp;color=0:07111F,48:10324D,100:007D8C&amp;text=Md.%20Rifat%20Khandaker&amp;fontColor=EAFBFF&amp;fontSize=42&amp;fontAlignY=36&amp;desc=Computational%20Materials%20Scientist%20%7C%20AI-for-Science%20Developer&amp;descAlignY=58&amp;descSize=17&amp;animation=fadeIn" />
+First-principles simulation × Scientific machine learning × Reproducible software
+Turning atomic-scale questions into testable, traceable computational evidence.
+![GitHub](https://img.shields.io/badge/GitHub-Rifat19R-111827?style=for-the-badge&logo=github&logoColor=white)
+![NEBwalk](https://img.shields.io/pypi/v/NEBwalk?style=for-the-badge&label=NEBwalk&color=00A6A6)
+![Documentation](https://img.shields.io/badge/NEBwalk-Documentation-153B5D?style=for-the-badge&logo=readthedocs&logoColor=white)
+![Email](https://img.shields.io/badge/Research-Collaboration-087E8B?style=for-the-badge&logo=gmail&logoColor=white)
 </div>
-
 ---
-
-## About Me
-
-I'm a Chemical Engineering graduate working at the intersection of first-principles simulation and scientific machine learning. I build open-source tools that connect DFT, active learning, uncertainty estimation, and ML interatomic potentials, with applications in energy storage, catalysis, ionic diffusion, and porous materials.
-
-My main focus is computational materials science, supported by hands-on experience in materials synthesis, characterisation, electrochemical testing, and prototype energy-storage systems.
-
-**Education:** B.Sc. in Chemical Engineering, Dhaka University of Engineering & Technology (DUET), Bangladesh
-**Location:** Bangladesh
-
+01 · Research identity
+I am a computational materials researcher and chemical engineer developing open-source tools for atomistic simulation, reliable DFT workflows, and AI-assisted materials discovery. My work connects quantum-mechanical calculations with machine-learned interatomic potentials (MLIPs), active learning, and scientific verification.
+My interests span surface chemistry and catalysis, atomic migration and transition states, energy-storage materials, MXenes and other 2D systems, and porous materials. I also work across computational research and experimental materials R&D.
+> **Research principle:** A converged calculation, a passing software test, and a scientifically validated prediction are three different things. I build workflows that keep those distinctions explicit.
+02 · Open-source research software
+⚛️ NEBwalk — Atomic migration & transition pathways
+![PyPI](https://img.shields.io/pypi/v/NEBwalk?label=PyPI&color=00A6A6)
+![CI](https://github.com/Rifat19R/NEBwalk/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-173B52)
+An ASE-compatible NEB/CI-NEB framework for minimum-energy paths and activation barriers, with calculator-independent workflows and targeted MLIP → DFT validation. Includes IDPP/geodesic-style interpolation, FIRE optimization, periodic image handling, Quantum ESPRESSO recovery, committee disagreement diagnostics, and resumable MACE–QE active-learning campaigns.
+Application: vacancy diffusion · surface hopping · reaction pathways · ionic migration  
+Evidence: v0.11.0; 13 retained, artifact-audited benchmark cases and independent ASE implementation-consistency comparisons. Uncertainty proxies are not calibrated uncertainty; sparse DFT single points are not equivalent to a full DFT NEB.
+Source code · Documentation · PyPI
+🧪 ActiStruct — Reliability-aware DFT active learning
+![CI](https://github.com/Rifat19R/ActiStruct/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-173B52)
+A framework for DFT-guided exploration of known structure/design variables using Gaussian-process and GNN-embedding surrogates, uncertainty-aware acquisition, failure-risk penalties, Quantum ESPRESSO parsing, recovery, caching, and provenance ledgers.
+Application: materials candidate selection · adsorption-site exploration · reliability-aware QE campaigns  
+Evidence: v2.0.0; real QE records, a Ti₃C₂-O low-fidelity H-adsorption campaign, and documented offline regression testing. High-fidelity ranking validation remains incomplete; results do not establish generalized DFT-cost savings.
+Source code and benchmark limitations
+🛡️ Alchemist-MCP — Scientific verification layer
+A fail-closed MCP-based verification toolkit for DFT-to-MLIP evidence: Quantum ESPRESSO input/output inspection, unit/provenance checks, group-aware data freezing, dry-run training plans, energy/force/barrier comparison, and reference-validation gates.
+Application: scientific data integrity · MLIP governance · auditable computational workflows  
+Evidence: automated software checks and an engineering demonstration; production scientific validation of migration barriers remains pending. Training adapters do not claim to execute validated production training runs.
+Source code and verification gates
+<details>
+<summary><b>How the three research tools fit together</b></summary>
+```mermaid
+flowchart TB
+    A["Atomic structures & DFT evidence"]
+    A --> N["NEBwalk: pathways & barriers"]
+    A --> S["ActiStruct: candidate exploration"]
+    N -. "verification interfaces" .-> V["Alchemist-MCP: evidence gates"]
+    S -. "verification interfaces" .-> V
+    V --> O["Traceable scientific decisions"]
+    classDef source fill:#12263a,stroke:#36c9c6,color:#f5fcff
+    classDef tool fill:#143a50,stroke:#22b8ad,color:#f5fcff
+    classDef gate fill:#1b3146,stroke:#80b8ec,color:#f5fcff
+    class A,O source
+    class N,S tool
+    class V gate
+```
+Conceptual interoperability architecture; these repositories are currently separate projects, not a fully integrated platform.
+</details>
+03 · Applied research & reproducible datasets
+Research project	Scientific application	Public evidence
+MOF CO₂/H₂ Screening	ML screening of 278,778 ARC-MOF structures for pre-combustion CO₂/H₂ separation; conformal uncertainty, SHAP, Pareto screening, and topology-level interpretation.	Code · Zenodo archive. Database/GCMC-benchmarked, not experimentally validated candidate performance.
+Solid-Electrolyte Validation & Deployment	Chemistry-aware validation and external generalization of Li solid-electrolyte conductivity models using OBELiX and an independent cohort.	Reproducibility package. Prespecified hypotheses favoring family-aware validation were not supported; restricted data are not redistributed.
+04 · Research workflow
+```text
+Scientific question
+      ↓
+Physical model + convergence requirements
+      ↓
+DFT / atomistic simulation / curated reference data
+      ↓
+Surrogate modelling • MLIPs • active learning
+      ↓
+Independent validation • uncertainty • failure analysis
+      ↓
+Reproducible evidence + physically defensible conclusions
+```
+05 · Technical toolkit
+Domain	Tools and methods
+First principles & atomistics	Quantum ESPRESSO · VASP · ASE · DFT workflows · NEB/CI-NEB · surface adsorption · atomic migration
+Scientific ML	Python · PyTorch · MACE · Gaussian processes · GNNs · scikit-learn · XGBoost · LightGBM · SHAP
+Trustworthy evaluation	Active learning · uncertainty quantification · group/OOD splits · reproducibility manifests · scientific test gates
+Engineering infrastructure	Linux/WSL · Git/GitHub · CI/CD · automated testing · CLI/API development · structured data pipelines
+06 · Research experience & direction
+Co-Principal Investigator in two World Bank/EDGE-supported energy-storage R&D projects, bridging computational work and experimental materials research.
+Experience working with synthesis/characterization and electrochemical measurements, including XRD, SEM/EDS, Raman, FTIR, BET, CV, EIS, and coin-cell prototyping.
+Current priorities: MLIP-assisted catalytic reaction pathways, robust atomistic simulations, sodium-ion energy materials, and reliable AI for scientific discovery.
+Interested in collaborations in computational catalysis, solid-state ion transport, 2D materials, MOFs, and reproducible scientific software.
 ---
-
-## Featured Projects
-
-### [ActiStruct](https://github.com/Rifat19R/ActiStruct)
-![Tests](https://img.shields.io/badge/tests-433%20passed%2C%200%20warnings-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-Reliability-aware active-learning framework for DFT-guided materials discovery. Combines a Gaussian-process surrogate with a frozen-embedding GNN (SchNet-style encoder) to propose the next DFT candidate under an uncertainty-guided acquisition strategy, while a four-tier escalation system classifies and recovers failed Quantum ESPRESSO runs. Every successful and failed run is recorded in an append-only ledger, with a Streamlit dashboard for monitoring campaigns. Includes a Ti₃C₂-O (MXene) hydrogen-evolution workflow and a 16-record transition-metal-complex reliability benchmark.
-
-This is a development release: 433 tests pass with 0 warnings, but a full closed active-learning loop has not yet been run end-to-end on live DFT data.
-
-`Python` `ASE` `Quantum ESPRESSO` `scikit-learn` `Gaussian Processes` `GNNs` `Streamlit`
-
----
-
-### [nebwalk](https://github.com/Rifat19R/nebwalk) · [PyPI](https://pypi.org/project/nebwalk/)
-![PyPI](https://img.shields.io/pypi/v/nebwalk)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-A lightweight, transparent, ASE-compatible NEB / CI-NEB library for computing minimum-energy paths, transition-state barriers, and diffusion mechanisms. Supports linear, IDPP, and regularised-geodesic interpolation, a FIRE optimiser, variable spring constants, and minimum-image handling for periodic systems. Works with any ASE calculator, including Quantum ESPRESSO, VASP, MACE, Egret, and EMT, and includes MLIP-assisted barrier pre-screening with cross-model disagreement selection ahead of DFT refinement, plus automated recovery for failed Quantum ESPRESSO images. Validated on a reproducible H-diffusion-on-Cu(111) benchmark (125.92 meV forward barrier, MACE-MP-0) across 20+ systems and 4 calculators.
-
-Published on PyPI, currently at **v0.10.0**.
-
-`Python` `ASE` `NEB/CI-NEB` `Quantum ESPRESSO` `VASP` `MLIPs`
-
----
-
-### [MOF CO₂/H₂ Screening](https://github.com/Rifat19R/mof-co2-h2-screening)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-Uncertainty-guided machine-learning screening of **278,778 ARC-MOF structures** for pre-combustion CO₂/H₂ separation at 298 K and 40 bar. Predicts CO₂ uptake, working capacity, CO₂/H₂ selectivity, and heat of adsorption using XGBoost as the primary model, with Random Forest, MLP, CGCNN, and a LightGBM-based stacking ensemble as comparisons. Uncertainty is quantified with split conformal prediction, interpreted with SHAP, and combined with Pareto ranking, topology-level design-rule extraction, and synthesizability scoring. The analysis identifies packing efficiency, more than pore diameter, as the primary control on CO₂/H₂ selectivity. Includes a [Zenodo reproducibility archive](https://doi.org/10.5281/zenodo.20305724).
-
-Accepted in *Digital Discovery* (Royal Society of Chemistry).
-
-`Python` `XGBoost` `LightGBM` `CGCNN` `Conformal Prediction` `SHAP`
-
----
-
-## Ongoing Research
-
-**Computational & AI-driven**
-- Reliability-aware DFT automation and failure recovery
-- Active learning for materials discovery
-- MLIP-assisted reaction-path calculations
-- Transition-metal-complex DFT reliability benchmarking
-- MXene adsorption and diffusion workflows
-- High-throughput porous-material screening
-
-**Energy storage**
-- Graphene-based sodium-ion batteries
-- Biomass-derived hard-carbon anodes
-- CR2032 proof-of-concept cell development, with pouch/cylindrical scale-up planning
-- Electrochemical characterisation: CV, EIS, charge-discharge, cycling
-- Battery-management-system integration
-
-**Hydrogen & 2D materials**
-- Graphene- and borophene-based hydrogen storage concepts
-- MXenes and MAX phases
-- Surface adsorption, diffusion, and transition pathways in 2D and catalytic systems
-
-*(Items above span validated results, active development, and early-stage research directions — see individual repositories for current status.)*
-
----
-
-## Technical Skills
-
-**Electronic structure & atomistic simulation**
-Quantum ESPRESSO · ASE · VASP · NEB / CI-NEB · DFT workflow design · molecular-dynamics workflow development · Wannier and phonon methods *(active learning direction, not yet production experience)*
-
-**Programming & data**
-Python · NumPy · Pandas · SciPy · Matplotlib · scikit-learn · XGBoost · LightGBM · PyTorch · Streamlit · Git · GitHub Actions · YAML · JSON/JSONL
-
-**Scientific machine learning**
-Gaussian processes · graph neural networks · SchNet-style embeddings · active learning · Bayesian acquisition · uncertainty quantification · conformal prediction · SHAP · MLIPs · MACE
-
-**Computing environment**
-Linux · WSL · Conda · HPC workflow preparation · MPI · reproducible environments · automated testing · CI/CD for scientific software
-
----
-
-## Research Experience
-
-- **Co-Principal Investigator and Computational Lead** on multiple World Bank / EDGE-supported energy-storage R&D projects.
-- Combine computational modelling with experimental materials research; coordinate research tasks, computational analysis, reporting, and technical documentation.
-- International research collaboration experience in computational materials and nanomaterials.
-
-**Experimental exposure** *(supporting the computational focus above)*: graphene and carbon-material synthesis, CR2032 coin-cell assembly, XRD, FESEM/SEM-EDS, Raman, FTIR, TGA-DSC, BET, battery testing, and BMS development.
-
----
-
-## Publications, Manuscripts & Research Outputs
-
-1. **Packing Efficiency Governs CO₂/H₂ Selectivity in Machine-Learning-Screened MOFs**
-   Md. Rifat Khandaker, Mohammad Asaduzzaman Chowdhury, Sujan Hossain
-   Manuscript in preparation, target journal *Digital Discovery* (RSC)
-   [Repository](https://github.com/Rifat19R/mof-co2-h2-screening) · [Zenodo](https://doi.org/10.5281/zenodo.20305724)
-
-Selected collaborative manuscripts and book chapters — bibliographic details to be added after verification.
-
----
-
-## Funded Research & Recognition
-
-- Co-PI on two World Bank / EDGE-supported energy-storage R&D projects
-- Research spanning graphene-based energy storage and prototype transport/energy systems
-- **Bicchuron 2.0** finalist — top 7 among 700+ participants
-- Experience in scientific leadership, computational analysis, proposal development, and research reporting
-
----
-
-## Current Direction
-
-I am currently building open-source tools that connect first-principles simulation, active learning, uncertainty estimation, ML interatomic potentials, and automated decision-making. My long-term goal is to help reduce the time from a scientific question to a validated computational answer.
-
-I am particularly interested in collaborations involving energy materials, catalytic surfaces, ionic diffusion, transition pathways, porous materials, and autonomous computational research.
-
----
-
-## Collaboration & Contact
-
-I am open to research collaboration in DFT, atomistic simulation, AI for materials, scientific software, energy storage, catalysis, MOFs, and 2D materials.
-
-- Email: [rifatkh.duet@gmail.com](mailto:rifatkh.duet@gmail.com)
-- GitHub: [@Rifat19R](https://github.com/Rifat19R)
-
----
-
 <div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Rifat19R&show_icons=true&theme=default&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Rifat19R&layout=compact&hide_border=true&theme=default)
-
+Let's build computational science that can be independently verified.
+![Email](https://img.shields.io/badge/Email-Research%20collaboration-087E8B?style=flat-square&logo=gmail&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-Rifat19R-111827?style=flat-square&logo=github&logoColor=white)
+<sub>Bangladesh · Open-source scientific software · Computational materials research</sub>
+<img width="100%" alt="End of profile" src="https://capsule-render.vercel.app/api?type=waving&amp;height=105&amp;section=footer&amp;color=0:07111F,48:10324D,100:007D8C" />
 </div>
